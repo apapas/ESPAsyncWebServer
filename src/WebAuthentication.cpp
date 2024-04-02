@@ -81,7 +81,7 @@ static bool getMD5(uint8_t * data, uint16_t len, char * output){//33 bytes or mo
 #elif defined(USE_RP2040)
   br_md5_init(&_ctx);
   br_md5_update(&_ctx, data, len);
-  br_md5_state(&_ctx, _buf);
+  br_md5_out(&_ctx, _buf);
 #else
   MD5Init(&_ctx);
   MD5Update(&_ctx, data, len);
